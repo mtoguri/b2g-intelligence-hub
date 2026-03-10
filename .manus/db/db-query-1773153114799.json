@@ -1,0 +1,37 @@
+{
+  "query": "SHOW TABLES; SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE();",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3V6NMqkQPanNSjn.fb190b76eac0 --database daGScGP4DuNA5HMALWXwyp --execute SHOW TABLES; SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE();",
+  "rows": [
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "budget_data"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "fetch_logs"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "personnel_changes"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "TABLE_NAME"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "personnel_changes"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "fetch_logs"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "budget_data"
+    },
+    {
+      "Tables_in_daGScGP4DuNA5HMALWXwyp": "__drizzle_migrations"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_daGScGP4DuNA5HMALWXwyp\n__drizzle_migrations\nbudget_data\nfetch_logs\npersonnel_changes\nTABLE_NAME\npersonnel_changes\nfetch_logs\nbudget_data\n__drizzle_migrations\n",
+  "stderr": "",
+  "execution_time_ms": 1717
+}

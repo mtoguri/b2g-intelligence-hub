@@ -1,0 +1,22 @@
+{
+  "query": "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() ORDER BY TABLE_NAME;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3V6NMqkQPanNSjn.fb190b76eac0 --database daGScGP4DuNA5HMALWXwyp --execute SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() ORDER BY TABLE_NAME;",
+  "rows": [
+    {
+      "TABLE_NAME": "__drizzle_migrations"
+    },
+    {
+      "TABLE_NAME": "budget_data"
+    },
+    {
+      "TABLE_NAME": "fetch_logs"
+    },
+    {
+      "TABLE_NAME": "personnel_changes"
+    }
+  ],
+  "messages": [],
+  "stdout": "TABLE_NAME\n__drizzle_migrations\nbudget_data\nfetch_logs\npersonnel_changes\n",
+  "stderr": "",
+  "execution_time_ms": 1568
+}

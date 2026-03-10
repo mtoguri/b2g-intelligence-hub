@@ -1,0 +1,273 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ============================================================
+   B2G Intelligence Hub — Design System
+   Philosophy: 行政インテリジェンス・ポータル
+   Primary: Deep Navy (#1e3a5f) + Intelligent Blue (#2563eb)
+   Accent: Score Orange (#f97316) for scoring/alerts
+   Background: Off-White (#f8fafc), Card: Pure White (#ffffff)
+   Typography: Noto Sans JP (body) + JetBrains Mono (data)
+   ============================================================ */
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand Colors */
+  --navy-900: oklch(0.22 0.06 245);
+  --navy-800: oklch(0.28 0.07 245);
+  --navy-700: oklch(0.35 0.08 245);
+  --navy-600: oklch(0.42 0.09 245);
+  --blue-600: oklch(0.52 0.22 258);
+  --blue-500: oklch(0.60 0.22 258);
+  --orange-500: oklch(0.70 0.18 45);
+
+  /* Semantic Colors */
+  --background: oklch(0.982 0.003 247);
+  --foreground: oklch(0.18 0.04 245);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 245);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 245);
+  --primary: oklch(0.35 0.10 245);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0.01 247);
+  --secondary-foreground: oklch(0.35 0.08 245);
+  --muted: oklch(0.95 0.008 247);
+  --muted-foreground: oklch(0.52 0.03 245);
+  --accent: oklch(0.94 0.015 247);
+  --accent-foreground: oklch(0.28 0.07 245);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.90 0.008 247);
+  --input: oklch(0.90 0.008 247);
+  --ring: oklch(0.52 0.22 258);
+
+  /* Charts */
+  --chart-1: oklch(0.52 0.22 258);
+  --chart-2: oklch(0.60 0.18 258);
+  --chart-3: oklch(0.70 0.18 45);
+  --chart-4: oklch(0.65 0.15 160);
+  --chart-5: oklch(0.55 0.20 300);
+
+  /* Sidebar */
+  --sidebar: oklch(0.22 0.06 245);
+  --sidebar-foreground: oklch(0.92 0.01 247);
+  --sidebar-primary: oklch(0.60 0.22 258);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.28 0.07 245);
+  --sidebar-accent-foreground: oklch(0.92 0.01 247);
+  --sidebar-border: oklch(0.30 0.06 245);
+  --sidebar-ring: oklch(0.52 0.22 258);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1440px;
+    }
+  }
+
+  /* Score Badge */
+  .score-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .score-high {
+    background: linear-gradient(135deg, oklch(0.70 0.18 45), oklch(0.65 0.20 35));
+    color: white;
+  }
+
+  .score-medium {
+    background: linear-gradient(135deg, oklch(0.60 0.22 258), oklch(0.52 0.22 258));
+    color: white;
+  }
+
+  .score-low {
+    background: linear-gradient(135deg, oklch(0.65 0.15 160), oklch(0.58 0.18 160));
+    color: white;
+  }
+
+  /* Status Dot */
+  .status-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .status-dot-active {
+    background-color: oklch(0.65 0.18 145);
+    box-shadow: 0 0 0 2px oklch(0.65 0.18 145 / 0.3);
+    animation: pulse-dot 2s infinite;
+  }
+
+  .status-dot-warning {
+    background-color: oklch(0.70 0.18 45);
+  }
+
+  .status-dot-inactive {
+    background-color: oklch(0.65 0.05 247);
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 2px oklch(0.65 0.18 145 / 0.3); }
+    50% { box-shadow: 0 0 0 4px oklch(0.65 0.18 145 / 0.15); }
+  }
+
+  /* Left border accent card */
+  .card-accent-blue {
+    border-left: 4px solid oklch(0.52 0.22 258);
+  }
+  .card-accent-orange {
+    border-left: 4px solid oklch(0.70 0.18 45);
+  }
+  .card-accent-green {
+    border-left: 4px solid oklch(0.65 0.18 145);
+  }
+  .card-accent-purple {
+    border-left: 4px solid oklch(0.55 0.20 300);
+  }
+
+  /* Mono font for data */
+  .font-mono-data {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  /* Sidebar nav item */
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-md text-sm transition-all duration-150;
+    color: oklch(0.75 0.03 247);
+  }
+
+  .sidebar-nav-item:hover {
+    background-color: oklch(0.28 0.07 245);
+    color: oklch(0.95 0.01 247);
+  }
+
+  .sidebar-nav-item.active {
+    background-color: oklch(0.52 0.22 258 / 0.2);
+    color: oklch(0.80 0.15 258);
+    border-left: 3px solid oklch(0.60 0.22 258);
+    padding-left: calc(0.75rem - 3px);
+  }
+
+  /* Page transition */
+  .page-enter {
+    animation: pageEnter 0.25s ease-out;
+  }
+
+  @keyframes pageEnter {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Count-up animation */
+  .count-up {
+    animation: countUp 0.8s ease-out;
+  }
+
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
