@@ -158,7 +158,7 @@ export async function fetchKkjTenders(params: KkjSearchParams): Promise<{
   tenders: KkjTender[];
   error?: string;
 }> {
-  const url = new URL("http://www.kkj.go.jp/api/");
+  const url = new URL("https://www.kkj.go.jp/api/");
 
   // 必須パラメータ（いずれか一つ）
   if (params.query) url.searchParams.set("Query", params.query);
